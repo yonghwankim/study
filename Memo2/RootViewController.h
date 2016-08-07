@@ -15,5 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *memo;
 - (IBAction)save:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *title;
 
 @end

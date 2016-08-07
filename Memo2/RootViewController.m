@@ -14,6 +14,7 @@
 
 @implementation RootViewController
 @synthesize memo;
+@synthesize title;
 
 
 - (void)viewDidLoad {
@@ -32,7 +33,9 @@
 }
 
 -(void)save:(id)sender {
-    [NSKeyedArchiver archiveRootObject:[memo text] toFile:dataFilePath];
+    
+    NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:title.text, @"title", memo.text, @"memo", nil];
+    [NSKeyedArchiver archiveRootObject:dataDictionary toFile:dataFilePath];
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

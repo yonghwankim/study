@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ogK-Xr-UkI">
-                                <rect key="frame" x="20" y="40" width="560" height="460"/>
+                                <rect key="frame" x="20" y="110" width="560" height="390"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -36,19 +36,31 @@
                                     <action selector="save:" destination="C3t-kL-pXN" eventType="touchUpInside" id="WMa-m4-9rj"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uci-vB-vG4">
+                                <rect key="frame" x="40" y="40" width="520" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mbp-8o-GT2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ogK-Xr-UkI" firstAttribute="top" secondItem="B0L-ie-elY" secondAttribute="bottom" constant="20" id="Bz8-CS-hOy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uci-vB-vG4" secondAttribute="trailing" constant="20" id="8Ea-H7-Ntw"/>
+                            <constraint firstItem="ogK-Xr-UkI" firstAttribute="top" secondItem="B0L-ie-elY" secondAttribute="bottom" constant="90" id="Bz8-CS-hOy"/>
                             <constraint firstItem="ogK-Xr-UkI" firstAttribute="leading" secondItem="8hU-db-W4m" secondAttribute="leadingMargin" id="Ds2-qj-mXS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ogK-Xr-UkI" secondAttribute="trailing" id="Jee-By-isU"/>
+                            <constraint firstItem="Uci-vB-vG4" firstAttribute="leading" secondItem="8hU-db-W4m" secondAttribute="leadingMargin" constant="20" id="SUA-3l-XKY"/>
                             <constraint firstItem="Udl-fB-2xi" firstAttribute="top" secondItem="ogK-Xr-UkI" secondAttribute="bottom" constant="100" id="fqf-wk-REq"/>
+                            <constraint firstItem="Uci-vB-vG4" firstAttribute="top" secondItem="B0L-ie-elY" secondAttribute="bottom" constant="20" id="seM-1Q-mCE"/>
                             <constraint firstItem="Udl-fB-2xi" firstAttribute="top" secondItem="fWj-FJ-aWp" secondAttribute="bottom" id="tol-av-K4I"/>
                             <constraint firstItem="fWj-FJ-aWp" firstAttribute="leading" secondItem="8hU-db-W4m" secondAttribute="leadingMargin" id="uY7-tz-3eC"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="memo" destination="ogK-Xr-UkI" id="H4J-7U-ven"/>
+                        <outlet property="title" destination="Uci-vB-vG4" id="oL4-cb-nQp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ng2-oj-PeK" userLabel="First Responder" sceneMemberID="firstResponder"/>
