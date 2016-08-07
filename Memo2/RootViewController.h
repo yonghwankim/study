@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController
+{
+    NSString *dataFilePath;
+}
+
+@property (weak, nonatomic) IBOutlet UITextView *memo;
+- (IBAction)save:(id)sender;
 
 @end

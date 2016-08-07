@@ -13,6 +13,8 @@
 @end
 
 @implementation RootViewController
+@synthesize memo;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,4 +36,6 @@
 }
 */
 
+- (IBAction)save:(id)sender {
+}
 @end
