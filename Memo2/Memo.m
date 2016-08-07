@@ -15,6 +15,7 @@
     self = [super init];
     self.memoText = [aDecoder decodeObjectForKey:@"memo"];
     self.title = [aDecoder decodeObjectForKey:@"title"];
+
     return self;
 }
 
@@ -22,6 +23,15 @@
 -(void)encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:title forKey:@"title"];
     [aCoder encodeObject:memoText forKey:@"memo"];
+}
+
+-(instancetype)init {
+    
+    if (self) {
+        [self setTitle:@""];
+        [self setMemoText:@""];
+    }
+    return self;
 }
 
 @end
