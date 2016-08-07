@@ -23,6 +23,12 @@
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     docsDir = [dirPaths objectAtIndex:0];
     dataFilePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:@"data.archive"]];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:dataFilePath]) {
+        NSString *memoData = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
+        memo.text = memoData;
+    }
 }
 
 -(void)save:(id)sender {
