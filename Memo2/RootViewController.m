@@ -25,6 +25,9 @@
     dataFilePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:@"data.archive"]];
 }
 
+-(void)save:(id)sender {
+    [NSKeyedArchiver archiveRootObject:[memo text] toFile:dataFilePath];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
