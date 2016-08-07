@@ -34,6 +34,12 @@
 -(void)save:(id)sender {
     [NSKeyedArchiver archiveRootObject:[memo text] toFile:dataFilePath];
 }
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if ([memo isFirstResponder]) {
+        [memo resignFirstResponder];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
