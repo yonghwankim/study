@@ -14,6 +14,7 @@
 		E1D0FC4C1D57184C007A0CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D0FC4B1D57184C007A0CC9 /* Assets.xcassets */; };
 		E1D0FC4F1D57184C007A0CC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D0FC4D1D57184C007A0CC9 /* LaunchScreen.storyboard */; };
 		E1D0FC581D571879007A0CC9 /* Memo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0FC571D571879007A0CC9 /* Memo.m */; };
+		E1D0FC5B1D5725F3007A0CC9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0FC5A1D5725F3007A0CC9 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		E1D0FC501D57184C007A0CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D0FC561D571879007A0CC9 /* Memo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memo.h; sourceTree = "<group>"; };
 		E1D0FC571D571879007A0CC9 /* Memo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memo.m; sourceTree = "<group>"; };
+		E1D0FC591D5725F3007A0CC9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		E1D0FC5A1D5725F3007A0CC9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 			children = (
 				E1D0FC421D57184C007A0CC9 /* AppDelegate.h */,
 				E1D0FC431D57184C007A0CC9 /* AppDelegate.m */,
+				E1D0FC591D5725F3007A0CC9 /* RootViewController.h */,
+				E1D0FC5A1D5725F3007A0CC9 /* RootViewController.m */,
 				E1D0FC561D571879007A0CC9 /* Memo.h */,
 				E1D0FC571D571879007A0CC9 /* Memo.m */,
 				E1D0FC451D57184C007A0CC9 /* ViewController.h */,
@@ -158,6 +163,7 @@
 				E1D0FC441D57184C007A0CC9 /* AppDelegate.m in Sources */,
 				E1D0FC411D57184C007A0CC9 /* main.m in Sources */,
 				E1D0FC581D571879007A0CC9 /* Memo.m in Sources */,
+				E1D0FC5B1D5725F3007A0CC9 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

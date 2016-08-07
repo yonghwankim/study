@@ -9,6 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    NSString *filePath;
+}
+@property (nonatomic, strong) NSMutableArray *memoListArray;
+@property (assign, readwrite) NSInteger memoIndex;
+- (void) saveData;
+
 
 @property (strong, nonatomic) UIWindow *window;
 

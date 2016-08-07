@@ -16,9 +16,38 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    NSMutableArray *memoListArray = [[NSMutableArray alloc] init];
+    self.memoListArray = memoListArray;
+    
+    NSString *docDir;
+    NSArray *dirPaths;
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docDir = [dirPaths objectAtIndex:0];
+    filePath = [[NSString alloc] initWithString:[docDir stringByAppendingPathComponent:@"data.archive"]];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:filePath]) {
+        NSArray *savedMemo = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        self.memoListArray = [savedMemo mutableCopy];
+    }
+    self.memoIndex = -1;
+    
     return YES;
 }
+
+- (void)saveData {
+    
+    NSArray *arrayToSave = [NSArray arrayWithArray:(NSArray *)self.memoListArray];
+    if (![NSKeyedArchiver archiveRootObject:arrayToSave toFile:filePath]) {
+        NSLog(@"fail to save");
+    }else{
+        NSLog(@"data saved");
+    }
+    
+    arrayToSave = nil;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
