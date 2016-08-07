@@ -61,6 +61,7 @@
                     <connections>
                         <outlet property="memo" destination="ogK-Xr-UkI" id="H4J-7U-ven"/>
                         <outlet property="title" destination="Uci-vB-vG4" id="oL4-cb-nQp"/>
+                        <outlet property="titleTextField" destination="Uci-vB-vG4" id="mSK-NV-i10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ng2-oj-PeK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,8 +16,34 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSMutableArray *memoListArray = [[NSMutableArray alloc] init];
+    self.memoListArray = memoListArray;
+    
+    NSString *docsDir;
+    NSArray *dirPaths;
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    docsDir = [dirPaths objectAtIndex:0];
+    filePath = [[NSString alloc] initWithString:[docsDir stringByAppendingPathComponent:@"data.archive"]];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:filePath]) {
+        NSArray *savedMemo = [[NSArray alloc] init];
+        savedMemo = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        memoListArray = [savedMemo mutableCopy];
+    }
+    self.memoIndex = -1;
+    
     return YES;
+}
+
+-(void)saveData {
+    NSArray *arrayToSave = [NSArray arrayWithArray:(NSArray *)self.memoListArray];
+    if (![NSKeyedArchiver archiveRootObject:arrayToSave toFile:filePath]) {
+        NSLog(@"fail to save");
+    }else{
+        NSLog(@"data saved");
+    }
+    arrayToSave = nil;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

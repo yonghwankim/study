@@ -10,11 +10,12 @@
 
 @interface RootViewController ()
 
+//@property (nonatomic, weak) NSDictionary *dataDictionary;
 @end
 
 @implementation RootViewController
 @synthesize memo;
-@synthesize title;
+@synthesize titleTextField;
 
 
 - (void)viewDidLoad {
@@ -30,15 +31,15 @@
         NSDictionary *dataDictionary;
         dataDictionary = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
         memo.text = [dataDictionary objectForKey:@"memo"];
-        title.text = [dataDictionary objectForKey:@"title"];
-//        NSString *memoData = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
-//        memo.text = memoData;
+        titleTextField.text = [dataDictionary objectForKey:@"titleTextField"];
+        NSString *memoData = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
+        memo.text = memoData;
     }
 }
 
--(void)save:(id)sender {
+-(IBAction)save:(id)sender {
     
-    NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:title.text, @"title", memo.text, @"memo", nil];
+    NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] initWithObjectsAndKeys:titleTextField.text, @"titleTextField", memo.text, @"memo", nil];
     [NSKeyedArchiver archiveRootObject:dataDictionary toFile:dataFilePath];
 }
 

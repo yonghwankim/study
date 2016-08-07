@@ -14,6 +14,7 @@
 		E1D0FBF11D55D310007A0CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1D0FBF01D55D310007A0CC9 /* Assets.xcassets */; };
 		E1D0FBF41D55D310007A0CC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1D0FBF21D55D310007A0CC9 /* LaunchScreen.storyboard */; };
 		E1D0FC001D56D4F4007A0CC9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0FBFF1D56D4F4007A0CC9 /* RootViewController.m */; };
+		E1D0FC031D5700C9007A0CC9 /* Memo.m in Sources */ = {isa = PBXBuildFile; fileRef = E1D0FC021D5700C9007A0CC9 /* Memo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		E1D0FBF51D55D310007A0CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1D0FBFE1D56D4F4007A0CC9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		E1D0FBFF1D56D4F4007A0CC9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		E1D0FC011D5700C9007A0CC9 /* Memo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Memo.h; sourceTree = "<group>"; };
+		E1D0FC021D5700C9007A0CC9 /* Memo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Memo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 				E1D0FBE51D55D310007A0CC9 /* AppDelegate.m */,
 				E1D0FBFE1D56D4F4007A0CC9 /* RootViewController.h */,
 				E1D0FBFF1D56D4F4007A0CC9 /* RootViewController.m */,
+				E1D0FC011D5700C9007A0CC9 /* Memo.h */,
+				E1D0FC021D5700C9007A0CC9 /* Memo.m */,
 				E1D0FBEA1D55D310007A0CC9 /* Main.storyboard */,
 				E1D0FBF01D55D310007A0CC9 /* Assets.xcassets */,
 				E1D0FBF21D55D310007A0CC9 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1D0FC031D5700C9007A0CC9 /* Memo.m in Sources */,
 				E1D0FBE61D55D310007A0CC9 /* AppDelegate.m in Sources */,
 				E1D0FBEF1D55D310007A0CC9 /* Memo2.xcdatamodeld in Sources */,
 				E1D0FC001D56D4F4007A0CC9 /* RootViewController.m in Sources */,
@@ -304,6 +310,7 @@
 				E1D0FBFA1D55D310007A0CC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
