@@ -27,8 +27,12 @@
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:dataFilePath]) {
-        NSString *memoData = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
-        memo.text = memoData;
+        NSDictionary *dataDictionary;
+        dataDictionary = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
+        memo.text = [dataDictionary objectForKey:@"memo"];
+        title.text = [dataDictionary objectForKey:@"title"];
+//        NSString *memoData = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
+//        memo.text = memoData;
     }
 }
 
