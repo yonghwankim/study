@@ -9,5 +9,19 @@
 #import "Memo.h"
 
 @implementation Memo
+@synthesize title, memoText;        //, 로 여러개 쓸 수도 있구나
+
+-(instancetype)initWithCoder:(NSCoder *)aDecoder {
+    self = [super init];
+    self.memoText = [aDecoder decodeObjectForKey:@"memo"];
+    self.title = [aDecoder decodeObjectForKey:@"title"];
+    return self;
+}
+
+
+-(void)encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:title forKey:@"title"];
+    [aCoder encodeObject:memoText forKey:@"memo"];
+}
 
 @end
