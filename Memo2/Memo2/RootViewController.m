@@ -8,7 +8,7 @@
 
 #import "RootViewController.h"
 
-@interface RootViewController ()
+@interface RootViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -16,8 +16,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    appDelegate = [[UIApplication sharedApplication] delegate];
+    itemListArray = [[NSArray alloc] init];
 }
+
+
+#pragma mark - tableView
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    itemListArray = [[appDelegate memoListArray] copy];
+    return itemListArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    [cell.textLabel setText:[[itemListArray objectAtIndex:indexPath.row] title]];
+    return cell;
+}
+
+-(NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath  {
+    [appDelegate setMemoIndex:indexPath.row];
+    return indexPath;
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [[appDelegate memoListArray] removeObjectAtIndex:indexPath.row];
+        [appDelegate saveData]; 
+    }
+}
+
+
+
+
+-(void)viewWillAppear:(BOOL)animated {
+//    [self.tableView reloadData];          //??
+}
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

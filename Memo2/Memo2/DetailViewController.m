@@ -34,7 +34,7 @@
     [currentMemo setMemoText:[self.memo text]];
     
     if ([appDelegate memoIndex] == -1) {
-        [[appDelegate memoListArray] insertObject:<#(nonnull id)#> atIndex:0];
+        [[appDelegate memoListArray] insertObject:currentMemo atIndex:0];       //?object로 뭘 넣어야 할까?
     }
     [appDelegate saveData];
     [appDelegate setMemoIndex:-1];

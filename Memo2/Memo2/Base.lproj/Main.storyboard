@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
@@ -13,6 +14,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="4su-zC-sFj">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4su-zC-sFj" id="QgY-Qy-2XP">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9YK-Zf-aq6" kind="push" id="brC-uF-gab"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" id="WKX-Xq-cBM">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="eR8-B8-TFf">
@@ -38,20 +52,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUo-lG-50r">
-                                <rect key="frame" x="192" y="128" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUo-lG-50r">
+                                <rect key="frame" x="20" y="84" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="3De-E2-RDl"/>
+                                    <constraint firstAttribute="height" constant="50" id="St7-o2-a4G"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3De-E2-RDl"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="97B-W8-MXi">
-                                <rect key="frame" x="154" y="279" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="97B-W8-MXi">
+                                <rect key="frame" x="20" y="154" width="560" height="346"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCh-cL-Pbw">
+                                <rect key="frame" x="20" y="500" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="8O3-4B-h1O"/>
+                                    <constraint firstAttribute="width" constant="100" id="9MA-qE-HvF"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Qa9-Q7-R5P"/>
+                                    <constraint firstAttribute="height" constant="100" id="v5p-5i-r0b"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="aUo-lG-50r" secondAttribute="trailing" id="2s4-j0-d7k"/>
+                            <constraint firstItem="ewm-W7-gvO" firstAttribute="top" secondItem="97B-W8-MXi" secondAttribute="bottom" constant="100" id="4nX-6V-vy3"/>
+                            <constraint firstItem="ewm-W7-gvO" firstAttribute="top" secondItem="KCh-cL-Pbw" secondAttribute="bottom" id="KcT-31-tYz"/>
+                            <constraint firstItem="97B-W8-MXi" firstAttribute="leading" secondItem="Tr3-tf-dpA" secondAttribute="leadingMargin" id="Mca-Bg-ZcQ"/>
+                            <constraint firstItem="KCh-cL-Pbw" firstAttribute="leading" secondItem="Tr3-tf-dpA" secondAttribute="leadingMargin" id="gaz-en-VMN"/>
+                            <constraint firstItem="aUo-lG-50r" firstAttribute="top" secondItem="lzJ-H2-hUk" secondAttribute="bottom" constant="20" id="jxE-FO-JPt"/>
+                            <constraint firstItem="97B-W8-MXi" firstAttribute="trailing" secondItem="Tr3-tf-dpA" secondAttribute="trailingMargin" id="rsb-AK-VDQ"/>
+                            <constraint firstItem="aUo-lG-50r" firstAttribute="leading" secondItem="Tr3-tf-dpA" secondAttribute="leadingMargin" id="ujn-iw-9F3"/>
+                            <constraint firstItem="97B-W8-MXi" firstAttribute="top" secondItem="aUo-lG-50r" secondAttribute="bottom" constant="20" id="vhI-PK-Yrh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="TnF-iH-6gb"/>
                     <connections>
@@ -79,7 +123,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nDe-Qt-wPg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344" y="-355"/>
+            <point key="canvasLocation" x="498" y="337"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="i9D-JI-ZqH"/>
+    </inferredMetricsTieBreakers>
 </document>

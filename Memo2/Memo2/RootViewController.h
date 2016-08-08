@@ -7,7 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface RootViewController : ViewController
+{
+    NSArray *itemListArray;
+    AppDelegate *appDelegate;
+}
 
 @end
